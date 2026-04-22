@@ -5,11 +5,15 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "AI Chatbot API"}
+    return {"message": "AI Business Chatbot API"}
 
 @app.post("/chat")
 def chat(data: dict):
-    query = data["query"]
+    query = data.get("query")
     response = get_response(query)
 
-    return {"response": response}
+    return {
+        "query": query,
+        "response": response,
+        "status": "success"
+    }
