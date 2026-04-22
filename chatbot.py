@@ -1,14 +1,22 @@
-def get_response(query):
+def get_response(query: str):
     query = query.lower()
 
-    if "price" in query:
-        return "Our pricing starts from $10/month."
+    # Greetings
+    if any(word in query for word in ["hello", "hi", "hey"]):
+        return "Hello! How can I assist you today?"
 
+    # Pricing
+    elif "price" in query or "cost" in query:
+        return "Our pricing starts at $10/month depending on your needs."
+
+    # Services
     elif "service" in query:
-        return "We offer AI chatbot solutions for businesses."
+        return "We offer AI solutions, automation tools, and data analytics services."
 
-    elif "hello" in query:
-        return "Hello! How can I help you?"
+    # Support
+    elif "support" in query or "help" in query:
+        return "You can contact support at support@company.com"
 
+    # Default
     else:
-        return "Sorry, I didn't understand. Can you rephrase?"
+        return "I'm not sure about that. Could you please rephrase your question?"
