@@ -16,7 +16,7 @@ FastAPI-based AI chatbot that handles business queries and returns intelligent r
 - REST API using FastAPI
 - Lightweight and fast backend
 - Ready for deployment
-
+- Intent-based response system (basic NLP logic)
 ---
 
 🧠 Tech Stack
